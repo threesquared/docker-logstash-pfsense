@@ -4,7 +4,9 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/threesquared/logstash-pfsense.svg)
 [![](https://images.microbadger.com/badges/image/threesquared/logstash-pfsense.svg)](https://microbadger.com/images/threesquared/logstash-pfsense)
 
-> Dockerfile to run a Logstash instance configured to relay pfSense firewall log entires into InfluxDB to be visualised in Grafana
+> Dockerfile to run a Logstash instance configured to relay pfSense firewall log entires into InfluxDB which can be visualised in Grafana
+
+![](map.png)
 
 ## Installation
 
