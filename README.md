@@ -10,6 +10,8 @@
 
 ## Installation
 
+This guide assumes you already have a working pfSense, InfluxDB and Grafana setup.
+
 ### pfSense
 
 First you need to `Enable Remote Logging` in pfSense, this can be found in `Status/System Logs/Settings`. Then be sure to put the address to reach the Logstash docker container in `Remote log servers` and check `Firewall Events`.
@@ -20,7 +22,7 @@ You will also need to create a database called `firewall` in your InfluxDB (This
 
 ### Grafana
 
-Finally connect up your InfluxDB instance as a source in Grafana and then you can create visualisations based on the data. The JSON for an example worldmap panel of inbound blocked WAN countries is included [here](./panel.json).
+Finally connect up your InfluxDB instance as a source in Grafana and then you can create visualisations based on the data. The JSON for the example worldmap panel of inbound blocked WAN countries is included [here](./panel.json).
 
 ## Running
 
