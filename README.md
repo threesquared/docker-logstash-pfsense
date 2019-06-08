@@ -1,8 +1,8 @@
 # pfSense Logstash
 
-![Docker Build Status](https://img.shields.io/docker/cloud/build/threesquared/docker-pfsense-logstash-syslog-influxdb.svg)
-![Docker Pulls](https://img.shields.io/docker/pulls/threesquared/docker-pfsense-logstash-syslog-influxdb.svg)
-[![](https://images.microbadger.com/badges/image/threesquared/docker-pfsense-logstash-syslog-influxdb.svg)](https://microbadger.com/images/threesquared/docker-pfsense-logstash-syslog-influxdb)
+![Docker Build Status](https://img.shields.io/docker/cloud/build/threesquared/logstash-pfsense.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/threesquared/logstash-pfsense.svg)
+[![](https://images.microbadger.com/badges/image/threesquared/logstash-pfsense.svg)](https://microbadger.com/images/threesquared/logstash-pfsense)
 
 > Dockerfile to run a Logstash instance configured to relay pfSense firewall log entires into InfluxDB to be visualised in Grafana
 
@@ -30,7 +30,7 @@ You can use the image in a compose file:
 version: '2'
 services:
   server:
-    image: threesquared/docker-pfsense-logstash-syslog-influxdb:latest
+    image: threesquared/logstash-pfsense:latest
     ports:
       - "5140:5140"
       - "5140:5140/udp"
@@ -41,11 +41,11 @@ Or just as a run command:
 ```bash
 $ docker run -d --name logstash \
              -p 5140:5140/udp -p 5140:5140 \
-             threesquared/docker-pfsense-logstash-syslog-influxdb
+             threesquared/logstash-pfsense
 ```
 
 ## Building
 
 ```bash
-$ docker build -t threesquared/docker-pfsense-logstash-syslog-influxdb .
+$ docker build -t threesquared/logstash-pfsense .
 ```
