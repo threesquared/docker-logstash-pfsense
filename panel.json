@@ -1,0 +1,88 @@
+{
+    "circleMaxSize": 30,
+    "circleMinSize": "2",
+    "colors": [
+      "#629e51",
+      "#c15c17",
+      "#890f02"
+    ],
+    "datasource": "firewall",
+    "decimals": 0,
+    "esMetric": "Count",
+    "gridPos": {
+      "h": 8,
+      "w": 8,
+      "x": 0,
+      "y": 0
+    },
+    "hideEmpty": false,
+    "hideZero": false,
+    "id": 27,
+    "initialZoom": "1",
+    "links": [],
+    "locationData": "countries",
+    "mapCenter": "Europe",
+    "mapCenterLatitude": 46,
+    "mapCenterLongitude": 14,
+    "maxDataPoints": 1,
+    "mouseWheelZoom": false,
+    "options": {},
+    "showLegend": false,
+    "stickyLabels": false,
+    "tableQueryOptions": {
+      "geohashField": "geohash",
+      "latitudeField": "latitude",
+      "longitudeField": "longitude",
+      "metricField": "metric",
+      "queryType": "geohash"
+    },
+    "targets": [
+      {
+        "alias": "$tag_country",
+        "groupBy": [
+          {
+            "params": [
+              "country"
+            ],
+            "type": "tag"
+          }
+        ],
+        "hide": false,
+        "measurement": "logstash",
+        "orderByTime": "ASC",
+        "policy": "autogen",
+        "query": "SELECT count(\"id\") FROM \"autogen\".\"logstash\" WHERE $timeFilter GROUP BY \"country\"",
+        "rawQuery": false,
+        "refId": "A",
+        "resultFormat": "time_series",
+        "select": [
+          [
+            {
+              "params": [
+                "id"
+              ],
+              "type": "field"
+            },
+            {
+              "params": [],
+              "type": "count"
+            }
+          ]
+        ],
+        "tags": [
+          {
+            "key": "action",
+            "operator": "=",
+            "value": "block"
+          }
+        ]
+      }
+    ],
+    "thresholds": "20,100",
+    "title": "WAN Blocked Inbound",
+    "type": "grafana-worldmap-panel",
+    "unitPlural": "",
+    "unitSingle": "",
+    "unitSingular": "",
+    "valueName": "total"
+  }
