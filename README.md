@@ -8,11 +8,9 @@
 
 ## Installation
 
-You will first need to set up the various services to talk to each other:
-
 ### pfSense
 
-First you need to `Enable Remote Logging` in pfSense, this can be found in `Status/System Logs/Settings`. Then Be sure to put the address to reach the Logstash docker container in `Remote log servers` and check `Firewall Events`.
+First you need to `Enable Remote Logging` in pfSense, this can be found in `Status/System Logs/Settings`. Then be sure to put the address to reach the Logstash docker container in `Remote log servers` and check `Firewall Events`.
 
 ### InfluxDB
 
